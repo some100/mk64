@@ -1359,19 +1359,19 @@ void main_menu_act(struct Controller* controller, u16 controllerIdx) {
                         default:
                             gMainMenuSelection = MAIN_MENU_OK_SELECT;
                             break;
-                        case 0:
+                        case GRAND_PRIX:
                             gMainMenuSelection = MAIN_MENU_MODE_SUB_SELECT;
                             play_sound2(SOUND_MENU_GP);
                             break;
-                        case 2:
+                        case VERSUS:
                             gMainMenuSelection = MAIN_MENU_MODE_SUB_SELECT;
                             play_sound2(SOUND_MENU_VERSUS);
                             break;
-                        case 1:
+                        case TIME_TRIALS:
                             gMainMenuSelection = MAIN_MENU_MODE_SUB_SELECT;
                             play_sound2(SOUND_MENU_TIME_TRIALS);
                             break;
-                        case 3:
+                        case BATTLE:
                             gMainMenuSelection = MAIN_MENU_OK_SELECT;
                             play_sound2(SOUND_MENU_BATTLE);
                             break;
