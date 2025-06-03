@@ -7308,7 +7308,7 @@ u8 d_course_koopa_troopa_beach_crab_frames[][4096] = {
 
 // 0x06014828
 // animations? lights?
-u32 d_course_koopa_troopa_beach_unk_data1[] = {
+uintptr_t d_course_koopa_troopa_beach_unk_data1[] = {
     0x00000000,
     0x00000001,
     0x00000000,
@@ -7578,7 +7578,7 @@ Gfx d_course_koopa_troopa_beach_dl_16990[] = {
 };
 
 //! 0x60169b
-u32 d_course_koopa_troopa_beach_unk4[] = {
+uintptr_t d_course_koopa_troopa_beach_unk4[] = {
     ANIMATION_DISABLE_AUTOMATIC_POP,
 
     ANIMATION_ADD_POS(0x00000000, 0x00000000, 0x00000000),
@@ -7644,7 +7644,7 @@ Animation* d_course_koopa_troopa_beach_unk_data5[] = {
 };
 
 // No idea what this stuff is
-u32 d_course_koopa_troopa_beach_unk_data6[] = {
+uintptr_t d_course_koopa_troopa_beach_unk_data6[] = {
     0x00000000, 0x00000000, 0x00000001, 0x00000000, 0x00000001,
 };
 

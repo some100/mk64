@@ -4,6 +4,8 @@
 #include <stdarg.h>
 #include <string.h>
 
+#ifdef TARGET_N64
+
 #include "crash_screen.h"
 #include "main.h"
 
@@ -252,3 +254,5 @@ void create_debug_thread(void) {
 void start_debug_thread(void) {
     osStartThread(&D_80162790);
 }
+
+#endif

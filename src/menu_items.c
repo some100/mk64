@@ -3727,7 +3727,7 @@ void func_80099EC4(void) {
         var_s0 = ((var_s0 / 8) * 8) + 8;
     }
     osInvalDCache((void*) gMenuCompressedBuffer, var_s0);
-    osPiStartDma(&sp68, 0, 0, (u32) _textures_0aSegmentRomStart + SEGMENT_OFFSET(temp_s2->textureData),
+    osPiStartDma(&sp68, 0, 0, (uintptr_t) _textures_0aSegmentRomStart + SEGMENT_OFFSET(temp_s2->textureData),
                  gMenuCompressedBuffer, var_s0, &gDmaMesgQueue);
     if ((var_s0 && var_s0) && var_s0) {}
     osRecvMesg(&gDmaMesgQueue, &sp64, 1);
@@ -3746,7 +3746,7 @@ void func_80099EC4(void) {
                 var_s0 = ((var_s0 / 8) * 8) + 8;
             }
             osInvalDCache(gMenuCompressedBuffer + 0x500, var_s0);
-            osPiStartDma(&sp68, 0, 0, (u32) _textures_0aSegmentRomStart + SEGMENT_OFFSET(temp_s2->textureData),
+            osPiStartDma(&sp68, 0, 0, (uintptr_t) _textures_0aSegmentRomStart + SEGMENT_OFFSET(temp_s2->textureData),
                          gMenuCompressedBuffer + 0x500, var_s0, &gDmaMesgQueue);
         }
         mio0decode((u8*) gMenuCompressedBuffer,
@@ -3770,7 +3770,7 @@ void func_80099EC4(void) {
                 var_s0 = ((var_s0 / 8) * 8) + 8;
             }
             osInvalDCache(gMenuCompressedBuffer, var_s0);
-            osPiStartDma(&sp68, 0, 0, (u32) _textures_0aSegmentRomStart + SEGMENT_OFFSET(temp_s2->textureData),
+            osPiStartDma(&sp68, 0, 0, (uintptr_t) _textures_0aSegmentRomStart + SEGMENT_OFFSET(temp_s2->textureData),
                          gMenuCompressedBuffer, var_s0, &gDmaMesgQueue);
         }
         mio0decode((u8*) (gMenuCompressedBuffer + 0x500),

@@ -329,22 +329,22 @@ Acmd* synthesis_do_one_audio_update(s16* aiBuf, s32 bufLen, Acmd* acmd, s32 upda
 
 Acmd* synthesis_process_note(s32 noteIndex, struct NoteSubEu* noteSubEu, struct NoteSynthesisState* synthesisState,
                              UNUSED s16* aiBuf, s32 inBuf, Acmd* cmd, s32 updateIndex) {
-    s32 pad[3];
+    UNUSED s32 pad[3];
     struct AudioBankSample *audioBookSample; // sp130
     struct AdpcmLoop *loopInfo; // sp12C
     s16 *curLoadedBook; // sp128
-    s32 pad4;
+    UNUSED s32 pad4;
     s32 nSamplesToLoad;
     s32 noteFinished; // sp11C
     s32 restart; // sp118
     s32 flags;
     u16 resamplingRateFixedPoint; // sp112
-    s32 pad2[1];
+    UNUSED s32 pad2[1];
     u16 headsetPanRight;
     s32 loopInfo_2;
     s32 a1;
     s32 spFC; // spFC
-    s32 pad3;
+    UNUSED s32 pad3;
     s32 nAdpcmSamplesProcessed;
     s32 s4;
     u8 *sampleAddr; // spEC
@@ -364,7 +364,7 @@ Acmd* synthesis_process_note(s32 noteIndex, struct NoteSubEu* noteSubEu, struct 
     struct AudioBankSample *bankSample;
     s32 nParts; // spB0
     s32 curPart; // spAC
-    s32 pad5;
+    UNUSED s32 pad5;
     s16 addr;
     s32 resampledTempLen; // spA0
     u16 noteSamplesDmemAddrBeforeResampling;
@@ -463,7 +463,7 @@ Acmd* synthesis_process_note(s32 noteIndex, struct NoteSubEu* noteSubEu, struct 
                         var_a0_2 = (temp_t6 * 9) + sampleAddr;
                     } else {
                         var_a0_2 =
-                            dma_sample_data((uintptr_t) (temp_t6 * 9) + sampleAddr, ALIGN(((loopInfo_2 * 9) + 16), 4),
+                            dma_sample_data((uintptr_t) (temp_t6 * 9) + (uintptr_t) sampleAddr, ALIGN(((loopInfo_2 * 9) + 16), 4),
                                             flags, &synthesisState->sampleDmaIndex);
                     }
 

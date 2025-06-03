@@ -8347,7 +8347,7 @@ Animation* d_course_yoshi_valley_unk4[] = {
 };
 
 //! 0x06014798
-u32 d_course_yoshi_valley_unk5[] = {
+uintptr_t d_course_yoshi_valley_unk5[] = {
     ANIMATION_DISABLE_AUTOMATIC_POP,
 
     ANIMATION_ADD_POS(0x00000000, 0x00000000, 0x00000000),
@@ -8400,7 +8400,7 @@ u32 d_course_yoshi_valley_unk5[] = {
 };
 
 // No idea what this stuff is
-u32 d_course_yoshi_valley_unk6[] = {
+uintptr_t d_course_yoshi_valley_unk6[] = {
     0x00000000,
     0x00000001,
 };

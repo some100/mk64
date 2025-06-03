@@ -121,7 +121,7 @@ u8* dma_copy_base_misc_textures(u8* devAddr, u8* baseAddress, u32 size, u32 offs
 
     size = ALIGN16(size);
     osInvalDCache(address, (size));
-    osPiStartDma(&gDmaIoMesg, 0, 0, (uintptr_t) &_other_texturesSegmentRomStart[((u32) devAddr) & 0xFFFFFF], address,
+    osPiStartDma(&gDmaIoMesg, 0, 0, (uintptr_t) &_other_texturesSegmentRomStart[((uintptr_t) devAddr) & 0xFFFFFF], address,
                  size, &gDmaMesgQueue);
     osRecvMesg(&gDmaMesgQueue, &gMainReceivedMesg, 1);
     tempAddress = &address;
@@ -152,7 +152,7 @@ void init_item_window(s32 objectIndex) {
 }
 
 void func_8006EEE8(s32 courseId) {
-    D_8018D240 = (s32) dma_textures(gCourseOutlineTextures[courseId], D_800E5520[courseId], D_800E5520[courseId]);
+    D_8018D240 = (intptr_t) dma_textures(gCourseOutlineTextures[courseId], D_800E5520[courseId], D_800E5520[courseId]);
     // This is incredibly dumb. D_800E5548 ought to be something more like
     // `u16 D_800E5548[][2]` but that doesn't match for some insane reason
     D_8018D2B0 = D_800E5548[courseId * 2];

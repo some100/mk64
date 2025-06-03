@@ -2023,7 +2023,7 @@ Animation* d_rainbow_road_unk3[] = {
 };
 
 // 0x06016110
-u32 d_rainbow_road_unk4[] = {
+uintptr_t d_rainbow_road_unk4[] = {
     ANIMATION_DISABLE_AUTOMATIC_POP,
 
     ANIMATION_ADD_POS(0x00000000, 0x0000023a, 0x00000000),
@@ -2054,7 +2054,7 @@ u32 d_rainbow_road_unk4[] = {
 };
 
 // No idea what this stuff is
-u32 d_rainbow_road_unk5[] = {
+uintptr_t d_rainbow_road_unk5[] = {
     0x00000000, 0x00000000, 0x00000002, 0x00000000, 0x00000002,
 };
 

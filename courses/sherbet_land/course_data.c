@@ -3607,7 +3607,7 @@ Gfx d_course_sherbet_land_dl_8E00[] = {
 };
 
 // 0x06008EB0
-u32 d_course_sherbet_land_unk_data1[] = {
+uintptr_t d_course_sherbet_land_unk_data1[] = {
     ANIMATION_DISABLE_AUTOMATIC_POP,
 
     ANIMATION_RENDER_MODEL(d_course_sherbet_land_dl_8D00),
@@ -3966,7 +3966,7 @@ Animation* d_course_sherbet_land_unk_data11[] = {
 };
 
 // No idea what this stuff is
-u32 d_course_sherbet_land_unk_data12[] = { 0x00000000, 0x00000000, 0x00000001, 0x00000000, 0x00000001 };
+uintptr_t d_course_sherbet_land_unk_data12[] = { 0x00000000, 0x00000000, 0x00000001, 0x00000000, 0x00000001 };
 
 Gfx d_course_sherbet_land_dl_9AE8[] = {
     gsDPSetCombineMode(G_CC_MODULATEIDECALA, G_CC_MODULATEIDECALA),

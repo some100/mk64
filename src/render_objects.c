@@ -2421,11 +2421,11 @@ void func_8004ED40(s32 arg0) {
 
 void func_8004EE54(s32 arg0) {
     if (gIsMirrorMode != 0) {
-        func_8004D4E8(gMiniMapFinishLineX[arg0] + D_8018D2F0, gMiniMapFinishLineY[arg0] + D_8018D2F8, (u8*) D_8018D240,
+        func_8004D4E8(gMiniMapFinishLineX[arg0] + D_8018D2F0, gMiniMapFinishLineY[arg0] + D_8018D2F8, (u8*)(uintptr_t) D_8018D240,
                       (s32) D_8018D300, (s32) D_8018D308, (s32) D_8018D310, 0x000000FF, (s32) D_8018D2B0,
                       (s32) D_8018D2B8, (s32) D_8018D2B0, (s32) D_8018D2B8);
     } else {
-        func_8004D37C(gMiniMapFinishLineX[arg0] + D_8018D2F0, gMiniMapFinishLineY[arg0] + D_8018D2F8, (u8*) D_8018D240,
+        func_8004D37C(gMiniMapFinishLineX[arg0] + D_8018D2F0, gMiniMapFinishLineY[arg0] + D_8018D2F8, (u8*)(uintptr_t) D_8018D240,
                       (s32) D_8018D300, (s32) D_8018D308, (s32) D_8018D310, 0x000000FF, (s32) D_8018D2B0,
                       (s32) D_8018D2B8, (s32) D_8018D2B0, (s32) D_8018D2B8);
     }
@@ -2944,7 +2944,7 @@ void func_80050E34(s32 playerId, s32 arg1) {
     s32 objectIndex;
     s32 spD0;
     s32 spCC;
-    Player *dummy = &gPlayerOne[playerId];
+    UNUSED Player *dummy = &gPlayerOne[playerId];
     s32 spC4;
     s32 lapCount;
     s32 characterId;

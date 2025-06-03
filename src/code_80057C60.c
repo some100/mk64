@@ -1429,7 +1429,7 @@ void func_8005A070(void) {
         }
     }
     func_8008C204();
-    func_8008C1E0(&D_80165678, (s32) &D_801655F0);
+    func_8008C1E0(&D_80165678, (intptr_t) &D_801655F0);
 }
 
 void func_8005A14C(s32 playerId) {
@@ -5932,7 +5932,7 @@ void func_8006A7C0(Player* player, f32 arg1, f32 arg2, s8 arg3, s8 arg4) {
         move_s16_towards(&D_8018D890[arg3][arg4], 0, 0.1f);
         move_s16_towards(&D_8018D860[arg3][arg4], 0, 0.1f);
         if (D_8018D8D0[arg3][arg4] >= 0x78) {
-            func_8006B974((s32) player, arg3, arg4);
+            func_8006B974((intptr_t) player, arg3, arg4);
         }
     }
 }
