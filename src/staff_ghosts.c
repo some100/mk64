@@ -119,7 +119,7 @@ void set_staff_ghost(void) {
                 D_80162DD6 = 1;
                 D_80162DF4 = 1;
             }
-            D_80162DC4 = (u32)(uintptr_t) &d_mario_raceway_staff_ghost;
+            D_80162DC4 = (uintptr_t) &d_mario_raceway_staff_ghost;
             D_80162DE4 = 0;
             break;
         case COURSE_ROYAL_RACEWAY:
@@ -131,7 +131,7 @@ void set_staff_ghost(void) {
                 D_80162DD6 = 1;
                 D_80162DF4 = 1;
             }
-            D_80162DC4 = (u32)(uintptr_t) &d_royal_raceway_staff_ghost;
+            D_80162DC4 = (uintptr_t) &d_royal_raceway_staff_ghost;
             D_80162DE4 = 6;
             break;
         case COURSE_LUIGI_RACEWAY:
@@ -143,7 +143,7 @@ void set_staff_ghost(void) {
                 D_80162DD6 = 1;
                 D_80162DF4 = 1;
             }
-            D_80162DC4 = (u32)(uintptr_t) &d_luigi_raceway_staff_ghost;
+            D_80162DC4 = (uintptr_t) &d_luigi_raceway_staff_ghost;
             D_80162DE4 = 1;
             break;
         default:
