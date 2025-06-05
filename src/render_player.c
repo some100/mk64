@@ -780,7 +780,7 @@ UNUSED void failed_fixed_point_matrix_conversion(Mtx* dest, Mat4 src) {
  * Mat4 to Mtx explanation: https://blarg.ca/2020/10/11/fixed-point-math.
  */
 void convert_to_fixed_point_matrix(Mtx* dest, Mat4 src) {
-#ifdef AVOID_UB
+#if defined(AVOID_UB) || defined(GBI_FLOATS)
     // Use os function guMtxF2L instead. This helps little-endian systems.
     guMtxF2L(src, dest);
 #else

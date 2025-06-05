@@ -176,7 +176,11 @@ typedef struct {
 // This struct is almost identical to the GBI Vtx_t type,
 // except that its missing the "flag" member.
 typedef struct {
+#ifndef GBI_FLOATS
     s16 ob[3]; /* x, y, z */
+#else
+    f32 ob[3]; /* x, y, z */
+#endif
     s16 tc[2]; /* texture coord */
     s8 ca[4];  /* color & alpha */
 } CourseVtx;
