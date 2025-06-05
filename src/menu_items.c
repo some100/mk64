@@ -2602,7 +2602,7 @@ Gfx* func_800959F8(Gfx* displayListHead, Vtx* arg1) {
     return displayListHead;
 }
 
-#ifdef AVOID_UB
+#if defined(AVOID_UB) || defined(GBI_FLOATS)
 #define MTX_TYPE Mtx
 #else
 typedef struct {
@@ -2626,7 +2626,7 @@ typedef union {
 
 // Why... Why... Why... This function is so bad it's not going in the header.
 void func_80095AE0(MTX_TYPE* arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4) {
-#ifdef AVOID_UB
+#if defined(AVOID_UB) || defined(GBI_FLOATS)
     // Use Mat4 array to set matrix values using guMtxF2L. This helps little-endian systems.
     Mat4 src;
     src[0][0] = arg3;
