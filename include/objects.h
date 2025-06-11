@@ -373,9 +373,7 @@ extern s16 D_80165738;
 
 #define NUM_TORCHES 8
 
-// This should really be `extern Vec3s gTorchSpawns[];`
-//! @todo fix this extern
-extern s16 gTorchSpawns[];
+extern Vec3s gTorchSpawns[];
 
 /**
  * List of object list indices. Used both for the fires in the DK Jungle cave

@@ -77,7 +77,7 @@ void render_course_segments(uintptr_t addr, struct UnkStruct_800DC5EC* arg1) {
     u32 segment = SEGMENT_NUMBER2(addr);
     u32 offset = SEGMENT_OFFSET(addr);
     //! @todo Should be Gfx*
-    s32* gfx = (s32*) VIRTUAL_TO_PHYSICAL2(gSegmentTable[segment] + offset);
+    Gfx** gfx = (Gfx**) VIRTUAL_TO_PHYSICAL2(gSegmentTable[segment] + offset);
     s16 direction;
     s16 index;
     s16 sp1E;

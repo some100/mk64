@@ -159,28 +159,19 @@ s32 add_unused_obj_index(s32* listIdx, s32* nextFree, s32 size) {
     if (*nextFree >= size) {
         *nextFree = 0;
     }
-    count = 0;
     id = &listIdx[*nextFree];
-    /**
-     * @todo This HAS to be a for-loop of some variety, but I can't make a for-loop to match.
-     * If you replace this with ```for(var_v1 = 0; var_v1 < size; var_v1++)```
-     * The diff gets massive.
-     */
-    if (size > 0) {
-    loop_3:
+
+    for (count = 0; count < size; count++) {
         if (*id == NULL_OBJECT_ID) {
             objectIndex = find_unused_obj_index(id);
             *nextFree += 1;
+            break;
         } else {
             *nextFree += 1;
             if (*nextFree >= size) {
                 *nextFree = 0;
             }
-            count += 1;
             id = &listIdx[*nextFree];
-            if (count != size) { // check if don't check all element of the list
-                goto loop_3;
-            }
         }
     }
     if (count == size) {
@@ -1228,8 +1219,7 @@ void func_80074574(u8* arg0, void* arg1, u16 arg2, u16 arg3) {
     func_80074510((uintptr_t) &_other_texturesSegmentRomStart[SEGMENT_OFFSET(arg0)], arg1, arg2 * arg3);
 }
 
-//! @todo arg1 should likely be a u8 *
-void func_800745C8(s32 objectIndex, uintptr_t arg1) {
+void func_800745C8(s32 objectIndex, u8* arg1) {
     s32 phi_a1;
 
     if ((gObjectList[objectIndex].status & 1) != 0) {
@@ -1244,7 +1234,7 @@ void func_800745C8(s32 objectIndex, uintptr_t arg1) {
         }
 
         gObjectList[objectIndex].activeTexture =
-            (u8*) (gObjectList[objectIndex].textureWidth * gObjectList[objectIndex].textureHeight * phi_a1) + arg1;
+            (u8*) (gObjectList[objectIndex].textureWidth * gObjectList[objectIndex].textureHeight * phi_a1) + (uintptr_t) arg1;
         func_800744A0(objectIndex);
     }
 }
@@ -1309,7 +1299,7 @@ void func_800747F0(s32 objectIndex, u8* arg1) {
 
 void func_80074894(s32 objectIndex, u8* arg1) {
     func_800747F0(objectIndex, arg1);
-    func_800745C8(objectIndex, (uintptr_t) arg1);
+    func_800745C8(objectIndex, arg1);
 }
 
 void func_800748C4(s32 objectIndex, u8* arg1) {
@@ -2260,9 +2250,9 @@ void init_object_smoke_particle(s32 objectIndex, s32 flameIndex) {
     gObjectList[objectIndex].textureList = common_texture_particle_smoke[0];
     gObjectList[objectIndex].sizeScaling = 0.8f;
 
-    gObjectList[objectIndex].origin_pos[0] = (f32) * (gTorchSpawns + (flameIndex * 3) + 0) * xOrientation;
-    gObjectList[objectIndex].origin_pos[1] = (f32) * (gTorchSpawns + (flameIndex * 3) + 1);
-    gObjectList[objectIndex].origin_pos[2] = (f32) * (gTorchSpawns + (flameIndex * 3) + 2);
+    gObjectList[objectIndex].origin_pos[0] = (f32) * (*gTorchSpawns + (flameIndex * 3) + 0) * xOrientation;
+    gObjectList[objectIndex].origin_pos[1] = (f32) * (*gTorchSpawns + (flameIndex * 3) + 1);
+    gObjectList[objectIndex].origin_pos[2] = (f32) * (*gTorchSpawns + (flameIndex * 3) + 2);
     gObjectList[objectIndex].unk_034 = 0;
     gObjectList[objectIndex].type = 255;
     gObjectList[objectIndex].unk_0A2 = 255;
