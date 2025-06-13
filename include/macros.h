@@ -85,6 +85,7 @@
         }                                                                                                            \
     }
 
+#ifndef NO_SEGMENTED_MEMORY
 // convert a virtual address to physical.
 #define VIRTUAL_TO_PHYSICAL(addr) ((uintptr_t) (addr) & 0x1FFFFFFF)
 
@@ -93,10 +94,19 @@
 
 // another way of converting virtual to physical
 #define VIRTUAL_TO_PHYSICAL2(addr) ((u8*) (addr) - 0x80000000U)
+#else
+#define VIRTUAL_TO_PHYSICAL(addr) (uintptr_t) (addr)
+#define PHYSICAL_TO_VIRTUAL(addr) (uintptr_t) (addr)
+#define VIRTUAL_TO_PHYSICAL2(addr) (void*) (addr)
+#endif
 
 #if !ENABLE_CUSTOM_ASSET_TYPE
+#ifndef NO_SEGMENTED_MEMORY
 #define VIRTUAL_TO_PHYSICAL_ASSET(addr) \
     VIRTUAL_TO_PHYSICAL2(gSegmentTable[SEGMENT_NUMBER2(addr)] + SEGMENT_OFFSET(addr))
+#else
+#define VIRTUAL_TO_PHYSICAL_ASSET(addr) addr
+#endif
 #else
 #define VIRTUAL_TO_PHYSICAL_ASSET(addr)
 

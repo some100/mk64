@@ -105,3 +105,7 @@ mingw64/
 
 # torch
 torch.hash.yml
+
+# clangd
+.cache
+compile_commands.json

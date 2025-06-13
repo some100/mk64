@@ -4,6 +4,8 @@
 #include <ultra64.h>
 #include <macros.h>
 
+#ifndef NO_SEGMENTED_MEMORY
+
 extern u8 _memoryPoolSegmentNoloadStart[];
 extern u8 _memoryPoolSegmentNoloadEnd[];
 
@@ -113,5 +115,7 @@ extern u8 _startupLogoSegmentRomEnd[];
 #define STARTUP_LOGO_ROM_END &_startupLogoSegmentRomEnd[0]
 
 #endif /* AVOID_UB */
+
+#endif /* NO_SEGMENTED_MEMORY */
 
 #endif /* SEGMENTS_H */

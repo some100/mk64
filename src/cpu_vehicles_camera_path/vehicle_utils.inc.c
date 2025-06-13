@@ -9,8 +9,7 @@ void generate_train_path(void) {
     s32 i;
     Path2D* temp;
     TrackPathPoint* pathPoint =
-        (TrackPathPoint*) VIRTUAL_TO_PHYSICAL2(gSegmentTable[SEGMENT_NUMBER2(d_course_kalimari_desert_train_path)] +
-                                               SEGMENT_OFFSET(d_course_kalimari_desert_train_path));
+        (TrackPathPoint*) VIRTUAL_TO_PHYSICAL_ASSET(d_course_kalimari_desert_train_path);
 
     GET_PATH_LENGTH(pathPoint)
 
@@ -24,8 +23,7 @@ void generate_ferry_path(void) {
     s32 i;
 
     pathPoint =
-        (TrackPathPoint*) VIRTUAL_TO_PHYSICAL2(gSegmentTable[SEGMENT_NUMBER2(d_course_dks_jungle_parkway_ferry_path)] +
-                                               (SEGMENT_OFFSET(d_course_dks_jungle_parkway_ferry_path)));
+        (TrackPathPoint*) VIRTUAL_TO_PHYSICAL_ASSET(d_course_dks_jungle_parkway_ferry_path);
 
     GET_PATH_LENGTH(pathPoint)
 
