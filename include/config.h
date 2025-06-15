@@ -7,7 +7,11 @@
  * ENABLE_CUSTOM_COURSE_ENGINE are use to define your
  *
  */
+#ifndef ENABLE_CUSTOM_COURSE_ENGINE
 #define ENABLE_CUSTOM_COURSE_ENGINE 0
+#endif
 
+#ifndef ENABLE_CUSTOM_ASSET_TYPE
 #define ENABLE_CUSTOM_ASSET_TYPE 0
+#endif
 #endif

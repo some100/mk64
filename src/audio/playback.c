@@ -166,10 +166,12 @@ struct Drum* get_drum(s32 bankId, s32 drumId) {
         return NULL;
     }
 
+#ifndef NO_SEGMENTED_MEMORY
     if ((uintptr_t) gCtlEntries[bankId].drums < 0x80000000U) {
         stubbed_printf("Audio: voiceman: Percussion table pointer (bank %d) is irregular.\n");
         return NULL;
     }
+#endif
 
     drum = gCtlEntries[bankId].drums[drumId];
     if (drum == NULL) {
